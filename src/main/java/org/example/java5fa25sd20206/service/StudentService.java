@@ -27,4 +27,9 @@ public class StudentService {
 
         this.studentRepository.saveStudent(student);
     }
+
+    public void deleteStudentById(long id) {
+
+        studentRepository.deleteStudentById(id);
+    }
 }
