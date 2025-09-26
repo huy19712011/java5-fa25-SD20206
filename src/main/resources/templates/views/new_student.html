@@ -9,7 +9,12 @@
 <form th:action="@{/students/saveStudent}" th:object="${student}" method="post">
     <input type="text" th:field="*{id}" placeholder="Student Id">
     <input type="text" th:field="*{name}" placeholder="Student Name">
+    <p th:if="${#fields.hasErrors('name')}">Invalid Name</p>
     <input type="text" th:field="*{email}" placeholder="Student Email">
+    <p th:if="${#fields.hasErrors('email')}">Invalid Name</p>
+    <ul>
+        <li th:each="err : ${#fields.errors('email')}" th:text="${err}">Invalid Email</li>
+    </ul>
     <input type="text" th:field="*{phone}" placeholder="Student Phone">
     <button type="submit">Save</button>
 </form>
