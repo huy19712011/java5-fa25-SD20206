@@ -61,4 +61,27 @@ public class StudentController {
         return "redirect:/students";
 
     }
+
+    @GetMapping("/students/showFormForUpdate/{id}")
+    public String showFormForUpdate(@PathVariable("id") long id, Model model) {
+
+        // get student
+        Student student = studentService.getStudentById(id);
+
+        // send data to view
+        model.addAttribute("student", student);
+        return "views/update_student";
+    }
+
+    @PostMapping("/students/updateStudent")
+    public String updateStudent(@ModelAttribute("student") Student student) {
+
+        // update to DB
+        studentService.updateStudent(student);
+
+        // return view
+        return "redirect:/students";
+    }
+
+
 }

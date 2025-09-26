@@ -32,4 +32,14 @@ public class StudentService {
 
         studentRepository.deleteStudentById(id);
     }
+
+    public Student getStudentById(long id) {
+
+        return studentRepository.getStudentById(id);
+    }
+
+    public void updateStudent(Student student) {
+
+        studentRepository.updateStudent(student);
+    }
 }
