@@ -83,7 +83,8 @@ public class StudentService {
 
     public Page<Student> findPaginated(int pageNo, int pageSize, String sortField, String sortDir) {
 
-        return studentRepositoryV2.findAll(PageRequest.of(pageNo - 1, pageSize, Sort.by(Sort.Direction.fromString(sortDir), sortField)));
+        return studentRepositoryV2
+                .findAll(PageRequest.of(pageNo - 1, pageSize, Sort.by(Sort.Direction.fromString(sortDir), sortField)));
     }
 
 }
