@@ -21,10 +21,10 @@ public class SchedulingTask {
 
 
     //@Scheduled(cron = "0 * * * * ?")
-    @Scheduled(cron = "*/10 * * * * ?")
-    public void scheduleTaskWithCronExpression() {
-
-        log.info("Cron Task: Time - {}", dateTimeFormater.format(LocalDateTime.now()));
-        log.info("Products in DB - {}", productService.getAllProducts().size());
-    }
+    //@Scheduled(cron = "*/10 * * * * ?")
+    //public void scheduleTaskWithCronExpression() {
+    //
+    //    log.info("Cron Task: Time - {}", dateTimeFormater.format(LocalDateTime.now()));
+    //    log.info("Products in DB - {}", productService.getAllProducts().size());
+    //}
 }

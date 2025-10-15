@@ -95,4 +95,15 @@ public class ProductController {
 
         return "redirect:/products";
     }
+
+    @GetMapping("/products/search")
+    public String searchProducts(@ModelAttribute("keyword") String keyword, Model model) {
+
+        List<Product> products = productService.searchProductsByName(keyword);
+
+        model.addAttribute("products", products);
+        model.addAttribute("keyword", keyword);
+
+        return "views/products";
+    }
 }
